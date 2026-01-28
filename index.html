@@ -1,62 +1,106 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PÁRAMO – Salsas y conservas artesanales</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>PÁRAMO – Sabor y origen, en un mismo frasco</title>
+  <meta name="description" content="PÁRAMO: salsas y conservas artesanales hechas en pequeños lotes. Cocina consciente, sabor y origen desde Tijuana.">
 
   <style>
     body{
       margin:0;
-      background:#F7F1E8;
+      background:#0f0f0f;
+      color:#f3f3f3;
       font-family: Georgia, serif;
-      color:#3F6F5E;
       text-align:center;
     }
+
     header{
-      padding:40px 16px;
+      padding:80px 16px 60px;
     }
+
+    .logo{
+      width:min(260px, 70vw);
+      height:auto;
+      display:block;
+      margin:0 auto 24px;
+      border-radius:18px;
+      box-shadow:0 18px 40px rgba(0,0,0,.45);
+    }
+
+    h1{
+      font-size:clamp(2.5rem, 6vw, 3.8rem);
+      letter-spacing:0.08em;
+      margin:0;
+    }
+
+    .tagline{
+      margin-top:14px;
+      font-size:1.1rem;
+      opacity:.85;
+    }
+
     main{
       max-width:900px;
       margin:0 auto;
-      padding:24px 16px 60px;
+      padding:40px 16px 80px;
+    }
+
+    section{
+      margin-top:80px;
+    }
+
+    h2{
+      font-size:1.8rem;
+      margin-bottom:24px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.05);
+      border-radius:20px;
+      padding:32px;
+      line-height:1.7;
+      box-shadow:0 20px 40px rgba(0,0,0,.35);
+    }
+
+    footer{
+      padding:40px 16px;
+      font-size:.9rem;
+      opacity:.6;
     }
   </style>
-  .hero{
-  padding:56px 16px 40px;
-  text-align:center;
-}
-
-.logo{
-  width:min(260px, 70vw);
-  height:auto;
-  display:block;
-  margin:0 auto 18px;
-  border-radius:18px;
-  box-shadow:0 12px 30px rgba(0,0,0,.25);
-}
-</style>
-
 </head>
 
 <body>
-  <header class="hero">
-  <img class="logo" src="LOGO ACTUAL.jpg" alt="PÁRAMO – Salsas y conservas artesanales">
-  <h1>PÁRAMO</h1>
-  <p>Sabor y origen, en un mismo frasco.</p>
-</header>
 
   <header>
+    <img src="LOGO_ACTUAL.jpg" alt="PÁRAMO – Salsas y conservas artesanales" class="logo">
     <h1>PÁRAMO</h1>
-    <p>Salsas y conservas artesanales</p>
+    <p class="tagline">Sabor y origen, en un mismo frasco.</p>
   </header>
 
   <main>
-    <h2>Historia</h2>
-    <p>Aquí vamos a escribir tu historia bonita, paso a paso.</p>
+    <section>
+      <h2>Nuestra historia</h2>
+      <div class="card">
+        <p>
+          PÁRAMO nace en Tijuana como un proyecto familiar impulsado por el respeto al origen,
+          la cocina consciente y el valor de lo artesanal.
+        </p>
+        <p>
+          Elaboramos salsas y conservas en pequeños lotes, cuidando cada ingrediente y cada proceso.
+          Cocinamos sin prisa, honrando el fuego lento, la tierra y la memoria del sabor.
+        </p>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    © PÁRAMO · Salsas y conservas artesanales
+  </footer>
+
 </body>
 </html>
 
 
-     
