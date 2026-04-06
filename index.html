@@ -11,10 +11,9 @@
     
     <style>
         :root {
-            --crema: #F9F7F2;     /* Fondo del menú superior */
-            --blanco-texto: #ffffff; /* Texto sobre la foto */
-            --terracota: #8B4513;   /* Color del botón */
-            --verde-obscuro: #2D3A27; /* Pie de página y títulos */
+            --crema: #F9F7F2;
+            --blanco: #ffffff;
+            --terracota: #8B4513;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -26,16 +25,21 @@
             scroll-behavior: smooth;
         }
 
-        /* --- MENÚ SUPERIOR (Discreto y elegante) --- */
+        /* --- NAVEGACIÓN --- */
         nav {
-            padding: 10px 5%;
+            padding: 15px 5%;
             display: flex;
-            justify-content: flex-end; /* Enlaces a la derecha */
+            justify-content: space-between;
             align-items: center;
             background: var(--crema);
             position: sticky;
             top: 0;
             z-index: 1000;
+        }
+
+        .logo-nav img {
+            height: 50px;
+            width: auto;
         }
 
         nav .links a {
@@ -48,110 +52,121 @@
             font-weight: 700;
         }
 
-        /* --- SECCIÓN HERO (LA FOTOGRAFÍA DE FONDO) --- */
+        /* --- SECCIÓN PRINCIPAL CON TU IMAGEN --- */
         .hero {
-            height: 95vh; /* Casi toda la pantalla */
+            height: 90vh;
             position: relative;
-            background-image: url('FOTO_FONDO_PROCESO.jpg'); /* !!! IMPORTANTE: CAMBIA ESTE NOMBRE POR TU IMAGEN !!! */
-            background-size: cover; /* La foto llena el espacio */
-            background-position: center; /* Centrada */
+            /* Aquí usamos tu archivo CHILES.png */
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('CHILES.png');
+            background-size: cover;
+            background-position: center;
             display: flex;
-            align-items: center; /* Texto centrado verticalmente */
-            justify-content: center; /* Texto centrado horizontalmente */
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            color: var(--blanco-texto);
-        }
-
-        /* Capa oscura sutil sobre la foto para que el texto sea legible */
-        .hero-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.3); /* Un toque sutil */
-            z-index: 1;
+            color: var(--blanco);
         }
 
         .hero-content {
             z-index: 10;
-            max-width: 600px;
-            padding: 20px;
         }
 
-        /* Tipografía grande y elegante para Páramo */
-        .hero-content h1 {
+        /* Tu logo central */
+        .logo-central {
+            width: 220px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0px 4px 15px rgba(0,0,0,0.5));
+        }
+
+        .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 4rem; /* ¡Muy grande! */
-            font-weight: 700;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5); /* Sombra para legibilidad */
+            font-size: 4.5rem;
+            letter-spacing: 4px;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
         }
 
-        .hero-content p {
-            font-size: 1.1rem;
+        .hero p {
+            font-size: 1.2rem;
             font-weight: 300;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             text-transform: uppercase;
             margin-bottom: 30px;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
         }
 
         .btn {
             background: var(--terracota);
             color: white;
-            padding: 15px 35px;
+            padding: 15px 40px;
             text-decoration: none;
             border-radius: 2px;
             transition: 0.3s;
             display: inline-block;
             font-size: 0.9rem;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             text-transform: uppercase;
+            font-weight: 700;
         }
 
-        .btn:hover { background: #6D360F; transform: scale(1.05); }
+        .btn:hover {
+            background: #6D360F;
+            transform: scale(1.05);
+        }
 
-        /* Iconos de redes sociales en la esquina superior derecha */
+        /* Iconos arriba a la derecha */
         .hero-socials {
             position: absolute;
             top: 40px;
             right: 5%;
             z-index: 20;
-            font-size: 1.2rem;
         }
 
         .hero-socials a {
-            color: var(--blanco-texto);
-            margin-left: 15px;
-            text-decoration: none;
-            opacity: 0.8;
+            color: var(--blanco);
+            margin-left: 20px;
+            font-size: 1.3rem;
             transition: 0.3s;
         }
-        .hero-socials a:hover { opacity: 1; }
 
-        /* --- OTRAS SECCIONES (Sencillas para no distraer) --- */
+        /* --- HISTORIA --- */
         section { padding: 100px 10%; text-align: center; }
 
         .historia h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            color: var(--verde-obscuro);
+            font-size: 2.5rem;
+            color: #2D3A27;
             margin-bottom: 30px;
         }
 
-        .historia p { max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8; color: #555; }
+        .historia p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+        }
 
-        footer { background: var(--verde-obscuro); color: var(--crema); padding: 40px 20px; text-align: center; }
+        footer {
+            background: #2D3A27;
+            color: var(--crema);
+            padding: 60px 20px;
+            text-align: center;
+        }
 
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.5rem; }
-            nav { justify-content: center; }
-            .hero-socials { top: 70px; right: 5%; }
+            .hero h1 { font-size: 2.8rem; }
+            .logo-nav { display: none; }
         }
     </style>
 </head>
 <body>
 
     <nav>
+        <div class="logo-nav">
+            <img src="LOGO SIN FONDO (1).png" alt="Páramo Logo">
+        </div>
         <div class="links">
             <a href="#historia">Historia</a>
             <a href="#cosecha">Cosecha</a>
@@ -160,14 +175,13 @@
     </nav>
 
     <section class="hero">
-        <div class="hero-overlay"></div>
-        
         <div class="hero-socials">
-            <a href="https://instagram.com/paramo.enfrasco" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="mailto:salsasyconservasparamo@gmail.com" title="Enviar Correo"><i class="far fa-envelope"></i></a>
+            <a href="https://instagram.com/paramo.enfrasco" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:salsasyconservasparamo@gmail.com"><i class="far fa-envelope"></i></a>
         </div>
         
         <div class="hero-content">
+            <img src="LOGO SIN FONDO (1).png" alt="Páramo" class="logo-central">
             <h1>PÁRAMO</h1>
             <p>Sabor y origen en un mismo frasco</p>
             <a href="#contacto" class="btn">Explorar Catálogo</a>
@@ -175,13 +189,13 @@
     </section>
 
     <section id="historia" class="historia">
-        <h2>Nuestra Cosecha en Tijuana</h2>
-        <p>"Páramo nace en el calor de una cocina familiar. Cada frasco es la promesa de Karina y Gissel Duarte: devolverle a la mesa el aroma del chile tatemado y el respeto por los procesos lentos y la tierra bajacaliforniana."</p>
+        <h2>Tradición Familiar</h2>
+        <p>"Páramo nace del respeto por la tierra y los procesos lentos. En cada frasco capturamos el alma de la cocina artesanal mexicana, directamente desde Tijuana."</p>
     </section>
 
     <footer id="contacto">
-        <p>PÁRAMO © 2026</p>
-        <p>Hecho con amor en Tijuana, B.C.</p>
+        <p style="letter-spacing: 2px; margin-bottom: 10px;">PÁRAMO © 2026</p>
+        <p>Hecho en Tijuana, B.C.</p>
     </footer>
 
 </body>
