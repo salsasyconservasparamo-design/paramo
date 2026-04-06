@@ -23,11 +23,12 @@
             background-color: var(--crema);
             color: var(--texto);
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
-        /* --- ENCABEZADO Y NAVEGACIÓN --- */
+        /* --- NAVEGACIÓN --- */
         nav {
-            padding: 20px 5%;
+            padding: 10px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -38,62 +39,52 @@
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--verde);
-            letter-spacing: 3px;
+        .logo-nav img {
+            height: 60px; /* Tamaño ideal para el menú */
+            width: auto;
+            vertical-align: middle;
         }
 
-        nav a {
+        nav .links a {
             text-decoration: none;
             color: var(--texto);
             margin-left: 20px;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            font-weight: 700;
         }
 
-        /* --- SECCIÓN HERO (PARA TU VIDEO) --- */
+        /* --- SECCIÓN HERO (PRINCIPAL) --- */
         .hero {
-            height: 80vh;
+            height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             position: relative;
-            overflow: hidden;
-            background: #222; /* Fondo mientras carga el video */
-        }
-
-        /* Espacio para el video que generarás */
-        .hero-video {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            object-fit: cover;
-            opacity: 0.6; /* Oscurece un poco para que el texto se lea */
+            background: #1a1a1a; /* Fondo oscuro elegante */
+            color: var(--blanco);
         }
 
         .hero-content {
-            position: relative;
             z-index: 10;
-            color: var(--blanco);
             padding: 20px;
         }
 
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            margin-bottom: 10px;
-            letter-spacing: 5px;
+        .logo-principal {
+            width: 280px; /* El logo resaltando al centro */
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.3));
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 300;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             margin-bottom: 30px;
+            text-transform: uppercase;
         }
 
         .btn {
@@ -104,61 +95,85 @@
             border-radius: 2px;
             transition: 0.3s;
             display: inline-block;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
         }
 
-        /* --- SECCIONES DE CONTENIDO --- */
-        section { padding: 80px 10%; text-align: center; }
+        .btn:hover {
+            background: #6D360F;
+            transform: scale(1.05);
+        }
+
+        /* --- SECCIONES --- */
+        section { padding: 100px 10%; text-align: center; }
 
         .historia h2 {
             font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
             color: var(--verde);
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         .historia p {
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
-            font-size: 1.1rem;
-            font-style: italic;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
         }
 
         .grid-productos {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
         }
 
         .card {
             background: var(--blanco);
-            padding: 20px;
-            border: 1px solid #eee;
-            transition: 0.3s;
+            padding: 40px 20px;
+            border: 1px solid #f0f0f0;
+            transition: 0.4s;
         }
 
-        .card:hover { border-color: var(--terracota); }
+        .card:hover { 
+            border-color: var(--terracota);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
 
-        .card h3 { font-family: 'Playfair Display', serif; margin-bottom: 10px; }
+        .card h3 { 
+            font-family: 'Playfair Display', serif; 
+            margin-bottom: 15px; 
+            color: var(--verde);
+        }
 
         footer {
             background: var(--verde);
             color: var(--crema);
-            padding: 40px;
+            padding: 60px 20px;
             text-align: center;
-            font-size: 0.8rem;
+        }
+
+        .footer-logo {
+            width: 80px;
+            margin-bottom: 20px;
+            opacity: 0.8;
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
+            .logo-principal { width: 200px; }
+            nav { justify-content: center; flex-direction: column; gap: 15px; }
+            nav .links a { margin: 0 10px; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">PÁRAMO</div>
-        <div>
+        <div class="logo-nav">
+            <img src="LOGO SIN FONDO (1).png" alt="Páramo Logo">
+        </div>
+        <div class="links">
             <a href="#historia">Historia</a>
             <a href="#productos">Cosecha</a>
             <a href="#contacto">Contacto</a>
@@ -167,40 +182,40 @@
 
     <section class="hero">
         <div class="hero-content">
-            <p>TIJUANA, B.C.</p>
-            <h1>PÁRAMO</h1>
-            <p>Sabor y origen en un mismo frasco.</p>
-            <a href="#productos" class="btn">Explorar Catálogo</a>
+            <img src="LOGO SIN FONDO (1).png" alt="Páramo Salsas y Conservas" class="logo-principal">
+            <p>Sabor y origen en un mismo frasco</p>
+            <a href="#productos" class="btn">Explorar la Cosecha</a>
         </div>
     </section>
 
     <section id="historia" class="historia">
         <h2>Nuestra Promesa</h2>
-        <p>"Nacimos del respeto por la tierra y los procesos lentos. En cada frasco, Karina y Gissel Duarte capturamos el alma de la cocina artesanal mexicana."</p>
+        <p>"Nacimos del respeto por la tierra y los procesos lentos. En cada frasco, Karina y Gissel Duarte capturamos el alma de la cocina artesanal mexicana, desde el corazón de Tijuana."</p>
     </section>
 
     <section id="productos">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem;">La Cosecha Actual</h2>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--verde);">La Selección Actual</h2>
         <div class="grid-productos">
             <div class="card">
                 <h3>Salsas</h3>
-                <p>Chiles tatemados y procesos a mano.</p>
+                <p>Chiles seleccionados y tatemados a fuego lento.</p>
             </div>
             <div class="card">
                 <h3>Conservas</h3>
-                <p>Fruta de temporada seleccionada.</p>
+                <p>Elaboradas con fruta de temporada de la región.</p>
             </div>
             <div class="card">
-                <h3>Ediciones Especiales</h3>
-                <p>Lotes pequeños con ingredientes únicos.</p>
+                <h3>Ediciones Limitadas</h3>
+                <p>Lotes pequeños nacidos de ingredientes extraordinarios.</p>
             </div>
         </div>
     </section>
 
     <footer id="contacto">
-        <p>PÁRAMO © 2026</p>
+        <img src="LOGO SIN FONDO (1).png" alt="Páramo" class="footer-logo">
+        <p style="letter-spacing: 2px; margin-bottom: 10px;">PÁRAMO © 2026</p>
         <p>salsasyconservasparamo@gmail.com</p>
-        <p>Hecho con amor en familia.</p>
+        <p style="margin-top: 20px; font-style: italic; opacity: 0.7;">Hecho en familia, con respeto por el origen.</p>
     </footer>
 
 </body>
