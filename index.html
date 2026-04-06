@@ -1,581 +1,207 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PÁRAMO — Sabor y origen, en un mismo frasco.</title>
-  <meta name="description" content="PÁRAMO: salsas y conservas artesanales. Sabor y origen, en un mismo frasco. Hecho en Tijuana, Baja California." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PÁRAMO | Salsas y Conservas Artesanales</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --crema: #F9F7F2;
+            --verde: #2D3A27;
+            --terracota: #8B4513;
+            --texto: #333333;
+            --blanco: #ffffff;
+        }
 
-  <style>
-    :root{
-      /* Paleta basada en tu logo + pedido */
-      --bg: #DCE3CF;         /* verde olivo claro */
-      --surface: rgba(255,255,255,.65);
-      --surface-2: rgba(255,255,255,.45);
-      --text: #111111;       /* texto negro */
-      --muted: rgba(17,17,17,.72);
-      --navy: #1E2F5B;       /* azul marino (título PÁRAMO) */
-      --accent: #2E4A87;     /* azul complementario */
-      --border: rgba(17,17,17,.12);
-      --shadow: 0 16px 40px rgba(0,0,0,.12);
-      --radius: 18px;
-      --max: 1120px;
-    }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    *{ box-sizing: border-box; }
-    html{ scroll-behavior: smooth; }
-    body{
-      margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color: var(--text);
-      background: radial-gradient(1200px 700px at 20% 0%, rgba(255,255,255,.55), transparent 55%),
-                  radial-gradient(1200px 700px at 90% 15%, rgba(255,255,255,.35), transparent 60%),
-                  var(--bg);
-    }
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--crema);
+            color: var(--texto);
+            line-height: 1.6;
+        }
 
-    a{ color: inherit; text-decoration: none; }
-    .container{ max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+        /* --- ENCABEZADO Y NAVEGACIÓN --- */
+        nav {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--crema);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
 
-    /* Top bar / nav estilo corporativo */
-    header{
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(10px);
-      background: rgba(220,227,207,.72);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      padding: 14px 0;
-    }
-    .brand{
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 220px;
-    }
-    .brand img{
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      object-fit: cover;
-      box-shadow: 0 10px 25px rgba(0,0,0,.12);
-      border: 1px solid rgba(255,255,255,.55);
-      background: #fff;
-    }
-    .brand .name{
-      line-height: 1.05;
-    }
-    .brand .name b{
-      display: block;
-      letter-spacing: .08em;
-      color: var(--navy);
-      font-size: 14px;
-    }
-    .brand .name span{
-      font-size: 12px;
-      color: var(--muted);
-    }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--verde);
+            letter-spacing: 3px;
+        }
 
-    .menu{
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-    .menu a{
-      font-size: 14px;
-      color: rgba(17,17,17,.85);
-      padding: 10px 10px;
-      border-radius: 12px;
-    }
-    .menu a:hover{ background: rgba(255,255,255,.55); }
+        nav a {
+            text-decoration: none;
+            color: var(--texto);
+            margin-left: 20px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-    .cta{
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .btn{
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.65);
-      box-shadow: 0 10px 25px rgba(0,0,0,.08);
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    .btn.primary{
-      background: var(--navy);
-      color: #fff;
-      border-color: rgba(0,0,0,.08);
-    }
-    .btn.primary:hover{ filter: brightness(1.06); }
-    .btn:hover{ background: rgba(255,255,255,.78); }
+        /* --- SECCIÓN HERO (PARA TU VIDEO) --- */
+        .hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: #222; /* Fondo mientras carga el video */
+        }
 
-    .burger{
-      display:none;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.65);
-      border-radius: 12px;
-      padding: 10px 12px;
-      cursor:pointer;
-      font-weight: 700;
-    }
+        /* Espacio para el video que generarás */
+        .hero-video {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            opacity: 0.6; /* Oscurece un poco para que el texto se lea */
+        }
 
-    /* Hero tipo corporativo (limpio) */
-    .hero{
-      padding: 44px 0 18px;
-    }
-    .heroGrid{
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 18px;
-      align-items: stretch;
-    }
-    .heroCard{
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 26px;
-      overflow: hidden;
-      position: relative;
-    }
-    .heroCard:before{
-      content:"";
-      position:absolute;
-      inset: -120px -120px auto auto;
-      width: 260px;
-      height: 260px;
-      background: radial-gradient(circle at 35% 35%, rgba(30,47,91,.18), transparent 60%);
-      transform: rotate(18deg);
-    }
-    .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.6);
-      color: rgba(17,17,17,.82);
-      font-size: 13px;
-      font-weight: 600;
-    }
-    h1{
-      margin: 14px 0 10px;
-      font-size: clamp(34px, 4vw, 52px);
-      letter-spacing: .08em;
-      color: var(--navy);
-    }
-    .tagline{
-      margin: 0 0 18px;
-      font-size: 16px;
-      color: var(--muted);
-      line-height: 1.6;
-      max-width: 58ch;
-    }
-    .heroActions{
-      display:flex;
-      gap:12px;
-      flex-wrap: wrap;
-      margin-top: 8px;
-    }
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            color: var(--blanco);
+            padding: 20px;
+        }
 
-    .heroSide{
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: 0 18px 45px rgba(0,0,0,.10);
-      display: grid;
-      gap: 12px;
-      align-content: start;
-    }
-    .logoBig{
-      width: min(360px, 100%);
-      height: auto;
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,.6);
-      background: #fff;
-      box-shadow: 0 18px 45px rgba(0,0,0,.12);
-      margin: 0 auto;
-      display:block;
-    }
-    .miniGrid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-    .mini{
-      background: rgba(255,255,255,.55);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 12px;
-    }
-    .mini b{ color: var(--accent); font-size: 13px; }
-    .mini p{ margin: 6px 0 0; font-size: 13px; color: var(--muted); line-height: 1.45; }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 10px;
+            letter-spacing: 5px;
+        }
 
-    /* Secciones */
-    section{ padding: 26px 0; }
-    .sectionTitle{
-      font-size: 26px;
-      margin: 0 0 10px;
-      color: var(--navy);
-      letter-spacing: .02em;
-    }
-    .sectionLead{
-      margin: 0 0 18px;
-      color: var(--muted);
-      line-height: 1.7;
-      max-width: 85ch;
-    }
+        .hero p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
 
-    .card{
-      background: rgba(255,255,255,.62);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: 0 16px 40px rgba(0,0,0,.08);
-    }
+        .btn {
+            background: var(--terracota);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: 0.3s;
+            display: inline-block;
+        }
 
-    .grid3{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-    .grid2{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-    .pill{
-      display:inline-block;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.6);
-      font-size: 12px;
-      font-weight: 700;
-      color: rgba(17,17,17,.78);
-    }
-    .card h3{
-      margin: 10px 0 8px;
-      font-size: 18px;
-      color: var(--navy);
-    }
-    .card p{
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 14px;
-    }
+        /* --- SECCIONES DE CONTENIDO --- */
+        section { padding: 80px 10%; text-align: center; }
 
-    /* Productos (placeholder bonito) */
-    .product{
-      display:flex;
-      align-items:flex-start;
-      justify-content: space-between;
-      gap: 14px;
-    }
-    .badge{
-      font-weight: 800;
-      color: #fff;
-      background: var(--accent);
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      white-space: nowrap;
-      align-self: flex-start;
-    }
+        .historia h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--verde);
+            margin-bottom: 20px;
+        }
 
-    /* Contacto */
-    .contactRow{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 12px;
-    }
+        .historia p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            font-style: italic;
+        }
 
-    footer{
-      margin-top: 16px;
-      padding: 22px 0 40px;
-      border-top: 1px solid var(--border);
-      background: rgba(255,255,255,.28);
-    }
-    .footGrid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 14px;
-      align-items: start;
-    }
-    .fine{
-      color: rgba(17,17,17,.6);
-      font-size: 12px;
-      line-height: 1.6;
-    }
+        .grid-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
 
-    /* Responsive */
-    @media (max-width: 900px){
-      .heroGrid{ grid-template-columns: 1fr; }
-      .grid3{ grid-template-columns: 1fr; }
-      .grid2{ grid-template-columns: 1fr; }
-      .brand{ min-width: auto; }
-      .menu{ display:none; }
-      .burger{ display:block; }
-      .menu.mobile{
-        display:flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
-        padding: 10px 0 16px;
-      }
-      .menu.mobile a{ background: rgba(255,255,255,.55); }
-      .cta{ display:none; }
-      .footGrid{ grid-template-columns: 1fr; }
-    }
-  </style>
+        .card {
+            background: var(--blanco);
+            padding: 20px;
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+
+        .card:hover { border-color: var(--terracota); }
+
+        .card h3 { font-family: 'Playfair Display', serif; margin-bottom: 10px; }
+
+        footer {
+            background: var(--verde);
+            color: var(--crema);
+            padding: 40px;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
 </head>
-
 <body>
-  <header>
-    <div class="container">
-      <div class="nav">
-        <a class="brand" href="#inicio" aria-label="Ir al inicio">
-          <img src="LOGO_ACTUAL.jpg" alt="Logo Páramo" />
-          <div class="name">
-            <b>PÁRAMO</b>
-            <span>Salsas y conservas artesanales</span>
-          </div>
-        </a>
 
-        <nav id="menu" class="menu" aria-label="Navegación principal">
-          <a href="#historia">Historia</a>
-          <a href="#filosofia">Filosofía</a>
-          <a href="#productos">Productos</a>
-          <a href="#contacto">Contacto</a>
-        </nav>
-
-        <div class="cta">
-          <a class="btn" href="#contacto">Escríbenos</a>
-          <a class="btn primary" href="mailto:salsasyconservasparamo@gmail.com">Cotizar</a>
+    <nav>
+        <div class="logo">PÁRAMO</div>
+        <div>
+            <a href="#historia">Historia</a>
+            <a href="#productos">Cosecha</a>
+            <a href="#contacto">Contacto</a>
         </div>
+    </nav>
 
-        <button class="burger" type="button" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
-      </div>
-
-      <!-- Menú móvil -->
-      <nav id="menuMobile" class="menu mobile" style="display:none;" aria-label="Navegación móvil">
-        <a href="#historia" onclick="closeMenu()">Historia</a>
-        <a href="#filosofia" onclick="closeMenu()">Filosofía</a>
-        <a href="#productos" onclick="closeMenu()">Productos</a>
-        <a href="#contacto" onclick="closeMenu()">Contacto</a>
-        <a class="btn primary" style="justify-content:center;" href="mailto:salsasyconservasparamo@gmail.com" onclick="closeMenu()">Cotizar</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="inicio" class="container">
     <section class="hero">
-      <div class="heroGrid">
-        <div class="heroCard">
-          <div class="kicker">🇲🇽 Hecho en Tijuana, Baja California</div>
-          <h1>PÁRAMO</h1>
-          <p class="tagline">
-            Sabor y origen, en un mismo frasco. Salsas y conservas artesanales hechas en pequeños lotes,
-            con respeto por la tierra y por los procesos lentos.
-          </p>
-          <div class="heroActions">
-            <a class="btn primary" href="#productos">Ver productos</a>
-            <a class="btn" href="#historia">Conocer la historia</a>
-            <a class="btn" href="#contacto">Contacto</a>
-          </div>
+        <div class="hero-content">
+            <p>TIJUANA, B.C.</p>
+            <h1>PÁRAMO</h1>
+            <p>Sabor y origen en un mismo frasco.</p>
+            <a href="#productos" class="btn">Explorar Catálogo</a>
         </div>
-
-        <aside class="heroSide" aria-label="Presentación visual">
-          <img class="logoBig" src="LOGO_ACTUAL.jpg" alt="Páramo — Logo" />
-          <div class="miniGrid">
-            <div class="mini">
-              <b>Cocina consciente</b>
-              <p>Elegimos lo artesanal sobre lo industrial y la calidad sobre la prisa.</p>
-            </div>
-            <div class="mini">
-              <b>Hecho en familia</b>
-              <p>Cada frasco sale con honestidad y amor por lo bien hecho.</p>
-            </div>
-          </div>
-        </aside>
-      </div>
     </section>
 
-    <section id="historia">
-      <h2 class="sectionTitle">Páramo: El Corazón de la Tierra en tu Mesa</h2>
-      <p class="sectionLead">
-        Una marca nacida del respeto por el origen, la cocina consciente y el valor de lo artesanal.
-      </p>
-
-      <div class="card">
-        <p><span class="pill">El Origen de un Sueño</span></p>
-        <p style="margin-top:10px;">
-          En el umbral del 2026, bajo el cielo vibrante de Tijuana, Baja California, nace una promesa.
-          No nació en una fábrica, sino en el calor de una cocina familiar, entre el aroma del chile tatemado
-          y la dulzura de la fruta de temporada. Karina y Gissel Duarte, hermanas de sangre y de convicción,
-          decidieron que el mundo necesitaba recordar a qué sabe el respeto por el origen.
-        </p>
-      </div>
-    </section>
-
-    <section id="filosofia">
-      <h2 class="sectionTitle">Nuestra Filosofía</h2>
-      <p class="sectionLead">
-        Para nosotros, un “páramo” no es un lugar vacío; es el lienzo donde la naturaleza se expresa con mayor fuerza.
-        Inspiradas por la vasta diversidad gastronómica de México, transformamos ingredientes locales en joyas culinarias.
-      </p>
-
-      <div class="grid3">
-        <div class="card">
-          <span class="pill">Cocina Consciente</span>
-          <h3>Artesanal sobre lo industrial</h3>
-          <p>
-            Nuestras salsas y conservas son resultado de una cocina consciente: ingredientes reales, procesos cuidados
-            y pequeños lotes con intención.
-          </p>
-        </div>
-
-        <div class="card">
-          <span class="pill">Vínculo familiar</span>
-          <h3>El hilo que une</h3>
-          <p>
-            Entendemos que la comida une a las familias. Cada frasco lleva honestidad, amor por lo bien hecho
-            y el sello de lo mexicano.
-          </p>
-        </div>
-
-        <div class="card">
-          <span class="pill">Nuestra visión</span>
-          <h3>Tradición + México moderno</h3>
-          <p>
-            Páramo es el encuentro entre la tradición que heredamos y el México moderno que construimos,
-            llevando el alma de la tierra a cada hogar.
-          </p>
-        </div>
-      </div>
+    <section id="historia" class="historia">
+        <h2>Nuestra Promesa</h2>
+        <p>"Nacimos del respeto por la tierra y los procesos lentos. En cada frasco, Karina y Gissel Duarte capturamos el alma de la cocina artesanal mexicana."</p>
     </section>
 
     <section id="productos">
-      <h2 class="sectionTitle">Productos</h2>
-      <p class="sectionLead">
-        Estamos preparando el catálogo para mostrártelo con fotos y descripciones. Por ahora, aquí tienes un ejemplo
-        de cómo se verá la sección (y lo ajustamos en cuanto me digas tus sabores principales).
-      </p>
-
-      <div class="grid2">
-        <div class="card product">
-          <div>
-            <span class="pill">Salsas</span>
-            <h3>Salsa artesanal (próximamente)</h3>
-            <p>Chiles seleccionados, tostado cuidadoso, balance perfecto entre picor y sabor.</p>
-          </div>
-          <span class="badge">🔥</span>
-        </div>
-
-        <div class="card product">
-          <div>
-            <span class="pill">Conservas</span>
-            <h3>Conserva de temporada (próximamente)</h3>
-            <p>Fruta o verdura de temporada en un proceso lento que respeta textura y carácter.</p>
-          </div>
-          <span class="badge">🍯</span>
-        </div>
-
-        <div class="card product">
-          <div>
-            <span class="pill">Lotes pequeños</span>
-            <h3>Ediciones limitadas</h3>
-            <p>Producción por lotes: lo que haces con manos, no con máquinas. Siempre fresco.</p>
-          </div>
-          <span class="badge">✨</span>
-        </div>
-
-        <div class="card product">
-          <div>
-            <span class="pill">Para negocios</span>
-            <h3>Restaurantes y socios comerciales</h3>
-            <p>Ventas al mayoreo / alianzas. Escríbenos para catálogo y precios.</p>
-          </div>
-          <span class="badge">🤝</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="contacto">
-      <h2 class="sectionTitle">Contacto</h2>
-      <p class="sectionLead">
-        Si quieres cotización, mayoreo o una colaboración, aquí estamos. Contestamos por correo e Instagram.
-      </p>
-
-      <div class="card">
-        <p><b>Correo:</b> <a href="mailto:salsasyconservasparamo@gmail.com">salsasyconservasparamo@gmail.com</a></p>
-        <p style="margin-top:8px;"><b>Instagram:</b> <a href="https://www.instagram.com/paramo.enfrasco" target="_blank" rel="noopener">paramo.enfrasco</a></p>
-
-        <div class="contactRow">
-          <a class="btn primary" href="mailto:salsasyconservasparamo@gmail.com">Enviar correo</a>
-          <a class="btn" href="https://www.instagram.com/paramo.enfrasco" target="_blank" rel="noopener">Abrir Instagram</a>
-        </div>
-
-        <p class="fine" style="margin-top:12px;">
-          Tip: si todavía no tienes el Instagram activo o prefieres no enlazarlo aún, dime y lo dejamos como texto sin link.
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footGrid">
-        <div>
-          <div class="brand" style="padding:0;">
-            <img src="LOGO_ACTUAL.jpg" alt="Logo Páramo" />
-            <div class="name">
-              <b>PÁRAMO</b>
-              <span>Salsas y conservas artesanales</span>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem;">La Cosecha Actual</h2>
+        <div class="grid-productos">
+            <div class="card">
+                <h3>Salsas</h3>
+                <p>Chiles tatemados y procesos a mano.</p>
             </div>
-          </div>
-          <p class="fine" style="margin-top:10px;">
-            © <span id="year"></span> Páramo. Hecho en México. <br/>
-            “Lo hecho en casa, con pasión y respeto, siempre será el ingrediente más extraordinario.”
-          </p>
+            <div class="card">
+                <h3>Conservas</h3>
+                <p>Fruta de temporada seleccionada.</p>
+            </div>
+            <div class="card">
+                <h3>Ediciones Especiales</h3>
+                <p>Lotes pequeños con ingredientes únicos.</p>
+            </div>
         </div>
+    </section>
 
-        <div class="fine">
-          <b style="color:rgba(17,17,17,.8);">Contacto</b><br/>
-          Correo: salsasyconservasparamo@gmail.com<br/>
-          Instagram: paramo.enfrasco
-        </div>
-      </div>
-    </div>
-  </footer>
+    <footer id="contacto">
+        <p>PÁRAMO © 2026</p>
+        <p>salsasyconservasparamo@gmail.com</p>
+        <p>Hecho con amor en familia.</p>
+    </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    function toggleMenu(){
-      const mm = document.getElementById("menuMobile");
-      mm.style.display = (mm.style.display === "none" || mm.style.display === "") ? "flex" : "none";
-    }
-    function closeMenu(){
-      const mm = document.getElementById("menuMobile");
-      mm.style.display = "none";
-    }
-  </script>
 </body>
 </html>
