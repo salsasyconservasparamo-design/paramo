@@ -16,10 +16,8 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body { font-family: 'Lato', sans-serif; background-color: var(--crema); }
 
-        /* --- NAVEGACIÓN --- */
         nav {
             padding: 0 5%;
             display: flex;
@@ -45,10 +43,9 @@
             font-weight: 700;
         }
 
-        /* --- SECCIÓN PRINCIPAL (HERO) --- */
         .hero {
             height: 100vh;
-            /* Aquí usamos tu archivo de los chiles: image_7a52ca.jpg */
+            /* SE CORRIGIÓ A .jpg */
             background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('image_7a52ca.jpg') no-repeat center center;
             background-size: cover;
             display: flex;
@@ -57,7 +54,6 @@
             position: relative;
         }
 
-        /* Iconos de redes sociales arriba a la derecha sobre la foto */
         .social-icons {
             position: absolute;
             top: 30px;
@@ -65,22 +61,10 @@
             z-index: 10;
         }
 
-        .social-icons a {
-            color: var(--blanco);
-            margin-left: 15px;
-            font-size: 1.1rem;
-            text-decoration: none;
-        }
+        .social-icons a { color: var(--blanco); margin-left: 15px; font-size: 1.1rem; }
 
-        /* Contenido Central */
-        .content {
-            position: relative;
-            z-index: 5;
-            text-align: center;
-            color: var(--blanco);
-            width: 90%;
-        }
-
+        .content { position: relative; z-index: 5; text-align: center; color: var(--blanco); width: 90%; }
+        
         .logo-central {
             width: clamp(120px, 15vw, 160px);
             margin-bottom: 10px;
@@ -110,10 +94,8 @@
             font-size: 0.8rem;
             letter-spacing: 1px;
             text-transform: uppercase;
-            transition: 0.3s;
         }
 
-        /* --- AJUSTE PARA CELULARES --- */
         @media (max-width: 600px) {
             .nav-links { display: none; }
             .hero { background-position: center; }
@@ -124,7 +106,7 @@
 
     <nav>
         <div class="logo-pequeno">
-            <img src="LOGO SIN FONDO (1).jpg" alt="Páramo">
+            <img src="LOGO SIN FONDO (1).png" alt="Páramo">
         </div>
         <div class="nav-links">
             <a href="#">Historia</a>
@@ -140,7 +122,7 @@
         </div>
 
         <div class="content">
-            <img src="LOGO SIN FONDO (1).jpg" alt="Sello Páramo" class="logo-central">
+            <img src="LOGO SIN FONDO (1).png" alt="Páramo" class="logo-central">
             <h1>PÁRAMO</h1>
             <p>Sabor y origen en un mismo frasco</p>
             <a href="#" class="btn-explorar">Explorar Catálogo</a>
