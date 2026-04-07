@@ -1,145 +1,403 @@
 <!DOCTYPE html>
+
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>PÁRAMO | Salsas y Conservas Artesanales</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+   
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+   
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+
+   
+
     <style>
+
         :root {
-            --crema: #F7F3EE;
-            --terracota: #8B4513;
+
+            --crema: #F9F7F2;
+
             --blanco: #ffffff;
-            --verde-obscuro: #2D3A27;
+
+            --terracota: #8B4513;
+
         }
+
+
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Lato', sans-serif; background-color: var(--crema); color: #333; }
+
+
+
+        body {
+
+            font-family: 'Lato', sans-serif;
+
+            background-color: var(--crema);
+
+            line-height: 1.6;
+
+            scroll-behavior: smooth;
+
+        }
+
+
 
         /* --- NAVEGACIÓN --- */
+
         nav {
-            padding: 0 5%;
+
+            padding: 15px 5%;
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             background: var(--crema);
-            position: fixed;
-            width: 100%;
+
+            position: sticky;
+
             top: 0;
+
             z-index: 1000;
-            height: 70px;
+
         }
 
-        .logo-pequeno img { height: 45px; width: auto; }
 
-        .nav-links a {
+
+        .logo-nav img {
+
+            height: 50px;
+
+            width: auto;
+
+        }
+
+
+
+        nav .links a {
+
             text-decoration: none;
+
             color: #333;
+
             margin-left: 20px;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 700;
-        }
 
-        /* --- HERO (FOTO DE FONDO RESPONSIVA) --- */
-        .hero {
-            height: 100vh;
-            /* Usamos la imagen que subiste para asegurar que cargue */
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('image_7a52ca.jpg') no-repeat center center;
-            background-size: cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .content { position: relative; z-index: 5; text-align: center; color: var(--blanco); width: 90%; }
-        
-        .logo-central {
-            width: clamp(130px, 20vw, 190px);
-            margin-bottom: 15px;
-            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
-        }
-
-        .content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.8rem, 8vw, 5rem);
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
-
-        .content p {
-            font-size: clamp(0.9rem, 2vw, 1.2rem);
-            letter-spacing: 2px;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-        }
-
-        .btn-explorar {
-            background: var(--terracota);
-            color: white;
-            padding: 15px 35px;
-            text-decoration: none;
             font-size: 0.8rem;
-            letter-spacing: 1px;
-            display: inline-block;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            font-weight: 700;
+
         }
 
-        /* --- SECCIONES INFERIORES --- */
-        .section { padding: 80px 10%; text-align: center; }
-        
-        .section h2 {
+
+
+        /* --- SECCIÓN PRINCIPAL CON TU IMAGEN --- */
+
+        .hero {
+
+            height: 90vh;
+
+            position: relative;
+
+            /* Aquí usamos tu archivo CHILES.png */
+
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('CHILES.png');
+
+            background-size: cover;
+
+            background-position: center;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            color: var(--blanco);
+
+        }
+
+
+
+        .hero-content {
+
+            z-index: 10;
+
+        }
+
+
+
+        /* Tu logo central */
+
+        .logo-central {
+
+            width: 220px;
+
+            height: auto;
+
+            margin-bottom: 20px;
+
+            filter: drop-shadow(0px 4px 15px rgba(0,0,0,0.5));
+
+        }
+
+
+
+        .hero h1 {
+
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--verde-obscuro);
-            margin-bottom: 25px;
+
+            font-size: 4.5rem;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 5px;
+
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+
         }
 
-        /* --- MÓVIL --- */
-        @media (max-width: 600px) {
-            .nav-links { display: none; } /* Mantiene la estética limpia en móvil */
-            .hero { background-attachment: scroll; } /* Mejor rendimiento en celulares */
+
+
+        .hero p {
+
+            font-size: 1.2rem;
+
+            font-weight: 300;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 30px;
+
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+
         }
+
+
+
+        .btn {
+
+            background: var(--terracota);
+
+            color: white;
+
+            padding: 15px 40px;
+
+            text-decoration: none;
+
+            border-radius: 2px;
+
+            transition: 0.3s;
+
+            display: inline-block;
+
+            font-size: 0.9rem;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            font-weight: 700;
+
+        }
+
+
+
+        .btn:hover {
+
+            background: #6D360F;
+
+            transform: scale(1.05);
+
+        }
+
+
+
+        /* Iconos arriba a la derecha */
+
+        .hero-socials {
+
+            position: absolute;
+
+            top: 40px;
+
+            right: 5%;
+
+            z-index: 20;
+
+        }
+
+
+
+        .hero-socials a {
+
+            color: var(--blanco);
+
+            margin-left: 20px;
+
+            font-size: 1.3rem;
+
+            transition: 0.3s;
+
+        }
+
+
+
+        /* --- HISTORIA --- */
+
+        section { padding: 100px 10%; text-align: center; }
+
+
+
+        .historia h2 {
+
+            font-family: 'Playfair Display', serif;
+
+            font-size: 2.5rem;
+
+            color: #2D3A27;
+
+            margin-bottom: 30px;
+
+        }
+
+
+
+        .historia p {
+
+            max-width: 800px;
+
+            margin: 0 auto;
+
+            font-size: 1.2rem;
+
+            line-height: 1.8;
+
+            color: #555;
+
+        }
+
+
+
+        footer {
+
+            background: #2D3A27;
+
+            color: var(--crema);
+
+            padding: 60px 20px;
+
+            text-align: center;
+
+        }
+
+
+
+        @media (max-width: 768px) {
+
+            .hero h1 { font-size: 2.8rem; }
+
+            .logo-nav { display: none; }
+
+        }
+
     </style>
+
 </head>
+
 <body>
 
+
+
     <nav>
-        <div class="logo-pequeno">
-            <img src="LOGO SIN FONDO (1).jpg" alt="Páramo">
+
+        <div class="logo-nav">
+
+            <img src="LOGO SIN FONDO (1).png" alt="Páramo Logo">
+
         </div>
-        <div class="nav-links">
+
+        <div class="links">
+
             <a href="#historia">Historia</a>
+
             <a href="#cosecha">Cosecha</a>
+
             <a href="#contacto">Contacto</a>
+
         </div>
+
     </nav>
 
+
+
     <section class="hero">
-        <div class="content">
-            <img src="LOGO SIN FONDO (1).jpg" alt="Sello Páramo" class="logo-central">
+
+        <div class="hero-socials">
+
+            <a href="https://instagram.com/paramo.enfrasco" target="_blank"><i class="fab fa-instagram"></i></a>
+
+            <a href="mailto:salsasyconservasparamo@gmail.com"><i class="far fa-envelope"></i></a>
+
+        </div>
+
+       
+
+        <div class="hero-content">
+
+            <img src="LOGO SIN FONDO (1).png" alt="Páramo" class="logo-central">
+
             <h1>PÁRAMO</h1>
+
             <p>Sabor y origen en un mismo frasco</p>
-            <a href="#cosecha" class="btn-explorar">Explorar Cosecha</a>
+
+            <a href="#contacto" class="btn">Explorar Catálogo</a>
+
         </div>
+
     </section>
 
-    <section id="historia" class="section">
-        <h2>Nuestra Historia</h2>
-        <p>Artesanía y tradición bajacaliforniana en cada proceso.</p>
+
+
+    <section id="historia" class="historia">
+
+        <h2>Tradición Familiar</h2>
+
+        <p>"Páramo nace del respeto por la tierra y los procesos lentos. En cada frasco capturamos el alma de la cocina artesanal mexicana, directamente desde Tijuana."</p>
+
     </section>
 
-    <section id="cosecha" class="section" style="background-color: white;">
-        <h2>La Cosecha</h2>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-             <img src="image.png" style="width: 300px; border-radius: 5px;" alt="Mermelada">
-        </div>
-    </section>
+
+
+    <footer id="contacto">
+
+        <p style="letter-spacing: 2px; margin-bottom: 10px;">PÁRAMO © 2026</p>
+
+        <p>Hecho en Tijuana, B.C.</p>
+
+    </footer>
+
+
 
 </body>
+
 </html>
