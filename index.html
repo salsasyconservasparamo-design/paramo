@@ -27,9 +27,9 @@
 
         /* --- MENÚ SUPERIOR --- */
         nav {
-            padding: 10px 5%;
+            padding: 15px 5%;
             display: flex;
-            justify-content: space-between; /* LOGO A LA IZQUIERDA, LINKS A LA DERECHA */
+            justify-content: space-between;
             align-items: center;
             background: var(--crema);
             position: sticky;
@@ -37,8 +37,9 @@
             z-index: 1000;
         }
 
+        /* Logo de la esquina más grande */
         .nav-logo img {
-            height: 50px; /* Ajusta el tamaño de tu logo */
+            height: 70px; 
             width: auto;
         }
 
@@ -46,17 +47,16 @@
             text-decoration: none;
             color: #333;
             margin-left: 20px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 700;
         }
 
-        /* --- SECCIÓN HERO (LA FOTOGRAFÍA DE FONDO) --- */
+        /* --- SECCIÓN HERO --- */
         .hero {
             height: 95vh;
             position: relative;
-            /* NOMBRE CORREGIDO SEGÚN TU REPOSITORIO */
             background-image: url('CHILES.png'); 
             background-size: cover;
             background-position: center;
@@ -70,7 +70,7 @@
         .hero-overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.4); /* Oscurecemos un poco más para ver el texto */
+            background: rgba(0,0,0,0.35); 
             z-index: 1;
         }
 
@@ -78,73 +78,82 @@
             z-index: 10;
             max-width: 600px;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Logo central sobre la palabra PÁRAMO */
+        .logo-central {
+            width: 150px;
+            height: auto;
+            margin-bottom: 10px;
+            filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.3));
         }
 
         .hero-content h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 4rem;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
             font-weight: 700;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            letter-spacing: 5px;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.6);
         }
 
         .hero-content p {
-            font-size: 1.1rem;
-            font-weight: 300;
-            letter-spacing: 2px;
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
+            text-shadow: 1px 1px 8px rgba(0,0,0,0.5);
         }
 
         .btn {
             background: var(--terracota);
             color: white;
-            padding: 15px 35px;
+            padding: 16px 40px;
             text-decoration: none;
-            border-radius: 2px;
-            transition: 0.3s;
-            display: inline-block;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
+            transition: 0.3s ease;
         }
 
-        .btn:hover { background: #6D360F; transform: scale(1.05); }
+        .btn:hover { background: #6D360F; transform: translateY(-3px); }
 
         .hero-socials {
             position: absolute;
             top: 30px;
             right: 5%;
             z-index: 20;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
 
         .hero-socials a {
             color: var(--blanco-texto);
             margin-left: 15px;
-            text-decoration: none;
-            opacity: 0.8;
+            transition: 0.3s;
         }
 
         /* --- OTRAS SECCIONES --- */
-        section { padding: 100px 10%; text-align: center; }
+        section { padding: 90px 10%; text-align: center; }
 
         .historia h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             color: var(--verde-obscuro);
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
-        .historia p { max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8; color: #555; }
+        .historia p { max-width: 850px; margin: 0 auto; font-size: 1.15rem; color: #444; }
 
-        footer { background: var(--verde-obscuro); color: var(--crema); padding: 40px 20px; text-align: center; }
+        footer { background: var(--verde-obscuro); color: var(--crema); padding: 50px 20px; text-align: center; }
 
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.5rem; }
-            .nav-logo { display: block; }
-            .links { display: none; } /* Ocultar links en móvil para limpieza */
+            .nav-logo img { height: 55px; }
+            .links { display: none; }
+            .hero-content h1 { font-size: 3rem; }
         }
     </style>
 </head>
@@ -152,7 +161,7 @@
 
     <nav>
         <div class="nav-logo">
-            <img src="LOGO SIN FONDO (1).png" alt="Páramo Logo">
+            <img src="LOGO SIN FONDO (1).png" alt="Páramo Logo Principal">
         </div>
         <div class="links">
             <a href="#historia">Historia</a>
@@ -170,6 +179,7 @@
         </div>
         
         <div class="hero-content">
+            <img src="LOGO SIN FONDO (1).png" alt="Sello Páramo" class="logo-central">
             <h1>PÁRAMO</h1>
             <p>Sabor y origen en un mismo frasco</p>
             <a href="#contacto" class="btn">Explorar Catálogo</a>
@@ -178,7 +188,7 @@
 
     <section id="historia" class="historia">
         <h2>Nuestra Cosecha en Tijuana</h2>
-        <p>"Páramo nace en el calor de una cocina familiar. Cada frasco es la promesa de Karina y Gissel Duarte: devolverle a la mesa el aroma del chile tatemado y el respeto por los procesos lentos y la tierra bajacaliforniana."</p>
+        <p>"Páramo nace en el calor de una cocina familiar. Cada frasco es la promesa de Karina Duarte y Gissel Duarte, hermanas con la convicción de: devolverle a la mesa el aroma del chile tatemado y el respeto por los procesos lentos y la tierra bajacaliforniana."</p>
     </section>
 
     <footer id="contacto">
