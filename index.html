@@ -45,8 +45,10 @@
 
         .hero {
             height: 100vh;
-            /* SE CORRIGIÓ A .jpg */
-            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('image_7a52ca.jpg') no-repeat center center;
+            /* RUTA UNIVERSAL: Busca la imagen en la carpeta actual o una atrás */
+            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), 
+                        url('image_7a52ca.jpg') no-repeat center center,
+                        url('../image_7a52ca.jpg') no-repeat center center;
             background-size: cover;
             display: flex;
             align-items: center;
