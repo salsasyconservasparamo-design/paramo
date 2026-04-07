@@ -5,143 +5,154 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PÁRAMO | Salsas y Conservas Artesanales</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
-            --crema: #F7F3EE;
-            --terracota: #8B4513;
-            --blanco: #ffffff;
+            --crema: #F9F7F2;     /* Fondo del menú superior */
+            --blanco-texto: #ffffff; /* Texto sobre la foto */
+            --terracota: #8B4513;   /* Color del botón */
+            --verde-obscuro: #2D3A27; /* Pie de página y títulos */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body { font-family: 'Lato', sans-serif; background-color: var(--crema); overflow-x: hidden; }
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--crema);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
 
-        /* --- MENÚ SUPERIOR --- */
+        /* --- MENÚ SUPERIOR (Discreto y elegante) --- */
         nav {
-            padding: 15px 5%;
+            padding: 10px 5%;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end; /* Enlaces a la derecha */
             align-items: center;
             background: var(--crema);
-            position: fixed;
-            width: 100%;
+            position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .logo-pequeno img { height: 45px; width: auto; }
-
-        .nav-links a {
+        nav .links a {
             text-decoration: none;
             color: #333;
-            margin-left: 25px;
-            font-size: 0.75rem;
+            margin-left: 20px;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 700;
         }
 
-        /* --- SECCIÓN PRINCIPAL (HERO) --- */
+        /* --- SECCIÓN HERO (LA FOTOGRAFÍA DE FONDO) --- */
         .hero {
-            height: 100vh;
-            background: url('fondo-artesanal.jpg') no-repeat center center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            height: 95vh; /* Casi toda la pantalla */
             position: relative;
-            margin-top: 60px; /* Espacio para el nav */
+            background-image: url('FOTO_FONDO_PROCESO.jpg'); /* !!! IMPORTANTE: CAMBIA ESTE NOMBRE POR TU IMAGEN !!! */
+            background-size: cover; /* La foto llena el espacio */
+            background-position: center; /* Centrada */
+            display: flex;
+            align-items: center; /* Texto centrado verticalmente */
+            justify-content: center; /* Texto centrado horizontalmente */
+            text-align: center;
+            color: var(--blanco-texto);
         }
 
-        /* Capa de oscurecimiento sutil */
-        .hero::before {
-            content: '';
+        /* Capa oscura sutil sobre la foto para que el texto sea legible */
+        .hero-overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.25);
+            background: rgba(0,0,0,0.3); /* Un toque sutil */
+            z-index: 1;
         }
 
-        /* Iconos de Redes arriba a la derecha de la foto */
-        .social-icons {
+        .hero-content {
+            z-index: 10;
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        /* Tipografía grande y elegante para Páramo */
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem; /* ¡Muy grande! */
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5); /* Sombra para legibilidad */
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+        }
+
+        .btn {
+            background: var(--terracota);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: 0.3s;
+            display: inline-block;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .btn:hover { background: #6D360F; transform: scale(1.05); }
+
+        /* Iconos de redes sociales en la esquina superior derecha */
+        .hero-socials {
             position: absolute;
             top: 40px;
             right: 5%;
-            z-index: 10;
+            z-index: 20;
+            font-size: 1.2rem;
         }
 
-        .social-icons a {
-            color: var(--blanco);
+        .hero-socials a {
+            color: var(--blanco-texto);
             margin-left: 15px;
-            font-size: 1.2rem;
             text-decoration: none;
-            opacity: 0.9;
-        }
-
-        /* Contenido Central */
-        .content {
-            position: relative;
-            z-index: 5;
-            text-align: center;
-            color: var(--blanco);
-        }
-
-        .logo-central {
-            width: 180px;
-            margin-bottom: -10px;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
-        }
-
-        .content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 5rem;
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-            text-shadow: 2px 2px 15px rgba(0,0,0,0.4);
-        }
-
-        .content p {
-            font-size: 1.2rem;
-            font-weight: 300;
-            letter-spacing: 3px;
-            margin-bottom: 35px;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-        }
-
-        .btn-explorar {
-            background: var(--terracota);
-            color: white;
-            padding: 16px 40px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            opacity: 0.8;
             transition: 0.3s;
-            border-radius: 2px;
-            display: inline-block;
+        }
+        .hero-socials a:hover { opacity: 1; }
+
+        /* --- OTRAS SECCIONES (Sencillas para no distraer) --- */
+        section { padding: 100px 10%; text-align: center; }
+
+        .historia h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--verde-obscuro);
+            margin-bottom: 30px;
         }
 
-        .btn-explorar:hover {
-            background: #6D360F;
-            transform: translateY(-3px);
-        }
+        .historia p { max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8; color: #555; }
 
-        /* Adaptación móvil */
+        footer { background: var(--verde-obscuro); color: var(--crema); padding: 40px 20px; text-align: center; }
+
         @media (max-width: 768px) {
-            .content h1 { font-size: 3rem; }
-            .logo-central { width: 130px; }
-            .nav-links { display: none; }
+            .hero-content h1 { font-size: 2.5rem; }
+            nav { justify-content: center; }
+            .hero-socials { top: 70px; right: 5%; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo-pequeno">
-            <img src="LOGO SIN FONDO (1).png" alt="Páramo">
-        </div>
-        <div class="nav-links">
+        <div class="links">
             <a href="#historia">Historia</a>
             <a href="#cosecha">Cosecha</a>
             <a href="#contacto">Contacto</a>
@@ -149,18 +160,29 @@
     </nav>
 
     <section class="hero">
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="far fa-envelope"></i></a>
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-socials">
+            <a href="https://instagram.com/paramo.enfrasco" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:salsasyconservasparamo@gmail.com" title="Enviar Correo"><i class="far fa-envelope"></i></a>
         </div>
-
-        <div class="content">
-            <img src="LOGO SIN FONDO (1).png" alt="Sello Páramo" class="logo-central">
+        
+        <div class="hero-content">
             <h1>PÁRAMO</h1>
             <p>Sabor y origen en un mismo frasco</p>
-            <a href="#" class="btn-explorar">Explorar Catálogo</a>
+            <a href="#contacto" class="btn">Explorar Catálogo</a>
         </div>
     </section>
+
+    <section id="historia" class="historia">
+        <h2>Nuestra Cosecha en Tijuana</h2>
+        <p>"Páramo nace en el calor de una cocina familiar. Cada frasco es la promesa de Karina y Gissel Duarte: devolverle a la mesa el aroma del chile tatemado y el respeto por los procesos lentos y la tierra bajacaliforniana."</p>
+    </section>
+
+    <footer id="contacto">
+        <p>PÁRAMO © 2026</p>
+        <p>Hecho con amor en Tijuana, B.C.</p>
+    </footer>
 
 </body>
 </html>
